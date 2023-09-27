@@ -61,9 +61,12 @@ const FilterBox = () => {
     setSearchParams(params);
   }, [clickBtn, openFilterList, calendarValue, dateTypeChange]);
 
-  const { getData: districtDatas } = useFetch(
-    `http://${process.env.REACT_APP_IP}/restaurants/categories/districts`,
-  );
+  // 백엔드용
+  // const { getData: districtDatas } = useFetch(
+  //   `http://${process.env.REACT_APP_IP}/restaurants/categories/districts`,
+  // );
+
+  const { getData: districtDatas } = useFetch('/data/district.json');
 
   return (
     <>

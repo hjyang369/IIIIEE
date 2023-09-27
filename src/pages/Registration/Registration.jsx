@@ -27,22 +27,23 @@ const Registration = () => {
   const [visibleTime, setVisibleTime] = useState('00:00');
   const [afterPost, setAfterPost] = useState(false);
   const [saveRoomId, setSaveRoomId] = useState();
+  const [saveFormdata, setSaveFormdata] = useState({});
 
-  const { getData: ageDatas } = useFetch(
-    //백엔드용
-    // `http://${process.env.REACT_APP_IP}/rooms/categories/ages`,
-    '/data/age.json',
-  );
-  const { getData: genderDatas } = useFetch(
-    //백엔드용
-    // `http://${process.env.REACT_APP_IP}/rooms/categories/genders`,
-    '/data/gender.json',
-  );
-  const { getData: timeDatas } = useFetch(
-    //백엔드용
-    // `http://${process.env.REACT_APP_IP}/rooms/categories/times`,
-    '/data/time.json',
-  );
+  // 백엔드용
+  // const { getData: ageDatas } = useFetch(
+  //   `http://${process.env.REACT_APP_IP}/rooms/categories/ages`,
+  // );
+  // const { getData: genderDatas } = useFetch(
+  //   `http://${process.env.REACT_APP_IP}/rooms/categories/genders`,
+  // );
+  // const { getData: timeDatas } = useFetch(
+  //   `http://${process.env.REACT_APP_IP}/rooms/categories/times`,
+  // );
+
+  const { getData: ageDatas } = useFetch('/data/age.json');
+  const { getData: genderDatas } = useFetch('/data/gender.json');
+  const { getData: timeDatas } = useFetch('/data/time.json');
+
   const params = useParams();
   const restaurant = params.restaurant;
   const { getData: idDatas } = useFetch(

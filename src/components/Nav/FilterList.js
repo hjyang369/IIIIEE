@@ -37,15 +37,20 @@ const FilterList = ({
     setVisible({ ...visible, [name]: innerText });
   };
 
-  const { getData: ageDatas } = useFetch(
-    `http://${process.env.REACT_APP_IP}/rooms/categories/ages`,
-  );
-  const { getData: genderDatas } = useFetch(
-    `http://${process.env.REACT_APP_IP}/rooms/categories/genders`,
-  );
-  const { getData: timeDatas } = useFetch(
-    `http://${process.env.REACT_APP_IP}/rooms/categories/times`,
-  );
+  // 백엔드용
+  // const { getData: ageDatas } = useFetch(
+  //   `http://${process.env.REACT_APP_IP}/rooms/categories/ages`,
+  // );
+  // const { getData: genderDatas } = useFetch(
+  //   `http://${process.env.REACT_APP_IP}/rooms/categories/genders`,
+  // );
+  // const { getData: timeDatas } = useFetch(
+  //   `http://${process.env.REACT_APP_IP}/rooms/categories/times`,
+  // );
+
+  const { getData: ageDatas } = useFetch('/data/age.json');
+  const { getData: genderDatas } = useFetch('/data/gender.json');
+  const { getData: timeDatas } = useFetch('/data/time.json');
 
   return (
     <FilterListBox>
